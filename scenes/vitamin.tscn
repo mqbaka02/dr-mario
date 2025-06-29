@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwv5j7s0iul4e"]
+
+[ext_resource type="PackedScene" uid="uid://cq5vnon75lbnu" path="res://scenes/abstract_block.tscn" id="1_85peu"]
+[ext_resource type="Script" uid="uid://co04jvula1gf6" path="res://scenes/vitamin.gd" id="2_o6cuy"]
+
+[node name="Abstract_block" instance=ExtResource("1_85peu")]
+script = ExtResource("2_o6cuy")
+
+[node name="Outline" parent="." index="0"]
+color = Color(0, 0.47451, 0, 1)

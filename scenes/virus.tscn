@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk7ix04kryf76"]
+
+[ext_resource type="PackedScene" uid="uid://cq5vnon75lbnu" path="res://scenes/abstract_block.tscn" id="1_s0dvx"]
+[ext_resource type="Script" uid="uid://5cko5bqnvrpm" path="res://scenes/virus.gd" id="2_8wh0f"]
+
+[node name="Abstract_block" instance=ExtResource("1_s0dvx")]
+script = ExtResource("2_8wh0f")

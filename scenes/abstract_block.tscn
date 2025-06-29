@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq5vnon75lbnu"]
+
+[ext_resource type="Script" uid="uid://cl8n285j3ucg6" path="res://scenes/abstract_block.gd" id="1_2tb3f"]
+
+[node name="Abstract_block" type="Node2D"]
+script = ExtResource("1_2tb3f")
+
+[node name="Outline" type="ColorRect" parent="."]
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0, 0, 0, 1)
+
+[node name="Inside" type="ColorRect" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 28.0
