@@ -1,5 +1,7 @@
 extends Block_Abstract;
 
+class_name Vitamin;
+
 func _ready() -> void:
 	outColor= Color.html("007900");
 	type= "vitamin";
@@ -21,4 +23,8 @@ func update_pos(blocks_list):
 		position_on_the_grid= Vector2(position_on_the_grid.x, position_on_the_grid.y + 1);
 		pass;
 	refresh();
+	pass;
+
+func set_pos_on_the_grid(pos: Vector2):
+	position_on_the_grid= pos;
 	pass;
