@@ -19,7 +19,11 @@ func can_go_down(blocks_list):
 		return false;
 		
 	for block in blocks_list:
-		if (block.position.x== position.x and block.position_on_the_grid.y== position_on_the_grid.y + 1):
+		if block.type== "capsule":
+			for vit in block.blocks:
+				if (vit.global_position.x== global_position.x and vit.get_global_grid_pos().y== get_global_grid_pos().y + 1):
+					return false;
+		if (block.global_position.x== global_position.x and block.get_global_grid_pos().y== get_global_grid_pos().y + 1):
 			return false;
 		pass;
 	return true;

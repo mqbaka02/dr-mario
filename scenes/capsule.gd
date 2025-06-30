@@ -9,11 +9,15 @@ var type: String= "capsule";
 var vitamin_scene= preload("res://scenes/vitamin.tscn");
 
 func can_go_down(blocks_list: Array)-> bool:
+	if position_on_the_grid.y== 15:
+		return false;
+	# print(blocks);
 	for vit in blocks:
+		print(vit.position);
+		print(vit.global_position);
 		if not vit.can_go_down(blocks_list):#needs an update that takes the is_vertical into account
 			return false;
 		pass;
-	#print("CAN");
 	return true;
 
 func create(colors: Array, pos: Vector2):
@@ -25,6 +29,7 @@ func create(colors: Array, pos: Vector2):
 		vit.color= colors[i];
 		vit.position= Vector2(i * 32, 0);
 		vit.initialize(false);
+		blocks.append(vit);
 		add_child(vit);
 		pass;
 	pass;
@@ -36,9 +41,7 @@ func set_position_from_pos_in_grid():
 func update_pos(blocks_list: Array):
 	if (can_go_down(blocks_list)):
 		position_on_the_grid= Vector2(position_on_the_grid.x, position_on_the_grid.y + 1);
-		#position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
-		position= Vector2(32, 32);
-		#set_pos(position_on_the_grid.x, position_on_the_grid.y + 1);
+		position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
 		pass;
 	pass;
 
@@ -50,8 +53,8 @@ func refresh_elements():
 
 func set_pos(x: int, y: int):
 	position_on_the_grid= Vector2(x, y);
-	#refresh_elements();
 	position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
-	print(position);
-	print(position_on_the_grid);
 	pass;
+
+func get_global_grid_pos():
+	return blocks[0].get_global_grid_pos();

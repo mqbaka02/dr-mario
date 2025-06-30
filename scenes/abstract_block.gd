@@ -23,3 +23,7 @@ func initialize(orphan: bool= true)-> void:
 func refresh():
 	position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
 	pass;
+
+
+func get_global_grid_pos():
+	return Vector2(global_position.x / 32, global_position.y / 32);
