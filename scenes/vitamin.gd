@@ -2,12 +2,18 @@ extends Block_Abstract;
 
 class_name Vitamin;
 
+var is_orphan: bool; #this would be true if this vitamin bock is parented to a capsule.
+
 func _ready() -> void:
+	pass;
+
+func initialize(orphan: bool= true):
+	is_orphan= orphan;
 	outColor= Color.html("007900");
 	type= "vitamin";
-	initialize();
+	super.initialize(orphan);
 	pass;
-	
+
 func can_go_down(blocks_list):
 	if position_on_the_grid.y== 15:
 		return false;

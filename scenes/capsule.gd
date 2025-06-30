@@ -18,14 +18,19 @@ func can_go_down(blocks_list: Array)-> bool:
 
 func create(colors: Array, pos: Vector2):
 	position_on_the_grid= pos;
+	set_position_from_pos_in_grid();
 	for i in range(colors.size()):
 		var vit= vitamin_scene.instantiate();
+		vit.is_orphan= false;
 		vit.color= colors[i];
-		#vit.set_pos_on_the_grid(Vector2(position_on_the_grid.x + i, position_on_the_grid.y));
-		vit.set_pos_on_the_grid(Vector2(5, 4));
-		#vit.position= Vector2(i * 32, 0)
+		vit.position= Vector2(i * 32, 0);
+		vit.initialize(false);
 		add_child(vit);
 		pass;
+	pass;
+
+func set_position_from_pos_in_grid():
+	self.position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
 	pass;
 
 func update_pos(blocks_list: Array):
@@ -36,7 +41,7 @@ func update_pos(blocks_list: Array):
 		#set_pos(position_on_the_grid.x, position_on_the_grid.y + 1);
 		pass;
 	pass;
-	
+
 func refresh_elements():
 	for i in range(blocks.size()):
 		blocks[i].set_pos_on_the_grid(Vector2(position_on_the_grid.x + i, position_on_the_grid.y));

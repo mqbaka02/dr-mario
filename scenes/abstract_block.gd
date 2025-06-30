@@ -10,10 +10,14 @@ var type: String;
 func get_position_in_px():
 	return Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
 	
-func initialize()-> void:
-	position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
+func initialize(orphan: bool= true)-> void:
+	if orphan:
+		position= Vector2(position_on_the_grid.x * 32, position_on_the_grid.y * 32);
+		pass;
+
 	self.get_node("Inside").color= color;
 	self.get_node("Outline").color= outColor;
+	# print("initialize");
 	pass;
 
 func refresh():
