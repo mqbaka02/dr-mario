@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cstetpm6g4tjw"]
+
+[ext_resource type="PackedScene" uid="uid://cxwnoln2jdev4" path="res://scenes/capsule.tscn" id="1_p4382"]
+[ext_resource type="Script" uid="uid://bfy8nfyrp5s84" path="res://scenes/controlled_capsule.gd" id="2_to7yg"]
+
+[node name="capsule" instance=ExtResource("1_p4382")]
+script = ExtResource("2_to7yg")

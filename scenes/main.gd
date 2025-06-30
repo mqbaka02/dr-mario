@@ -2,7 +2,8 @@ extends Node2D;
 
 const blockVirus= preload("res://scenes/virus.tscn");
 const blockVitamin= preload("res://scenes/vitamin.tscn");
-const capsuleScene= preload("res://scenes/capsule.tscn");
+# const capsuleScene= preload("res://scenes/capsule.tscn");
+const capsuleScene= preload("res://scenes/controlled_capsule.tscn");
 
 var blocks_list= [];
 

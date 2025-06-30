@@ -1,5 +1,7 @@
 extends Node2D;
 
+class_name Capsule;
+
 @export var position_on_the_grid: Vector2;
 @export var blocks: Array[Vitamin];
 @export var is_vertical: bool;
@@ -13,8 +15,6 @@ func can_go_down(blocks_list: Array)-> bool:
 		return false;
 	# print(blocks);
 	for vit in blocks:
-		print(vit.position);
-		print(vit.global_position);
 		if not vit.can_go_down(blocks_list):#needs an update that takes the is_vertical into account
 			return false;
 		pass;
